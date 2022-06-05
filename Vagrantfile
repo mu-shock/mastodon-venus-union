@@ -113,7 +113,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "mastodon.local"
 
   if defined?(VagrantPlugins::HostsUpdater)
-    config.vm.network :private_network, ip: "192.168.42.42", nictype: "virtio"
+    config.vm.network :private_network, ip: "192.168.56.42", nictype: "virtio"
     config.hostsupdater.remove_on_suspend = false
   end
 
