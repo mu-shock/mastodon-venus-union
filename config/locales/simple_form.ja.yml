@@ -60,6 +60,7 @@ ja:
         setting_use_blurhash: ぼかしはメディアの色を元に生成されますが、細部は見えにくくなっています
         setting_use_pending_items: 新着があってもタイムラインを自動的にスクロールしないようにします
         username: あなたのユーザー名は%{domain}の中で重複していない必要があります
+        manager_id: IDOLY PRIDEのマネージャーIDを入力してください
         whole_word: キーワードまたはフレーズが英数字のみの場合、単語全体と一致する場合のみ適用されるようになります
       domain_allow:
         domain: 登録するとこのサーバーからデータを受信したり、このドメインから受信するデータを処理して保存できるようになります
@@ -181,6 +182,7 @@ ja:
         type: インポートする項目
         username: ユーザー名
         username_or_email: ユーザー名またはメールアドレス
+        manager_id: マネージャーID
         whole_word: 単語全体にマッチ
       email_domain_block:
         with_dns_records: ドメインのMXレコードとIPアドレスを含む

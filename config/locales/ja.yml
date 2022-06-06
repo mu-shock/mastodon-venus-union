@@ -83,6 +83,7 @@ ja:
       moderator: Mod
     unavailable: プロフィールは利用できません
     unfollow: フォロー解除
+    manager_id: マネージャーID
   admin:
     account_actions:
       action: アクションを実行
@@ -219,6 +220,7 @@ ja:
       unsuspended_msg: "%{username}さんの無効化を解除しました"
       username: ユーザー名
       view_domain: ドメインの概要を表示
+      manager_id: マネージャーID
       warn: 警告
       web: Web
       whitelisted: 連合許可済み

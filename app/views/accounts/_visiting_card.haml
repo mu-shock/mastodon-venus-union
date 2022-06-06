@@ -1,0 +1,9 @@
+- unless @account.manager_id.nil? || @account.manager_id.empty?
+  .visiting-card
+    .visiting-card__id 
+      %a.visiting-card__link{ href: "#" }
+        = @account.manager_id
+    .visiting-card__qrcode
+      = image_tag(manager_qrcode_url)
+
+= javascript_pack_tag 'visiting_card'

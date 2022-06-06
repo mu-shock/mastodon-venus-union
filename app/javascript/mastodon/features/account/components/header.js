@@ -14,6 +14,7 @@ import ShortNumber from 'mastodon/components/short_number';
 import { NavLink } from 'react-router-dom';
 import DropdownMenuContainer from 'mastodon/containers/dropdown_menu_container';
 import AccountNoteContainer from '../containers/account_note_container';
+import { visiting_card_clicked } from 'mastodon/visiting_card';
 
 const messages = defineMessages({
   unfollow: { id: 'account.unfollow', defaultMessage: 'Unfollow' },
@@ -136,6 +137,7 @@ class Header extends ImmutablePureComponent {
     let bellBtn     = '';
     let lockedIcon  = '';
     let menu        = [];
+    let visiting_card = '';
 
     if (me !== account.get('id') && account.getIn(['relationship', 'followed_by'])) {
       info.push(<span key='followed_by' className='relationship-tag'><FormattedMessage id='account.follows_you' defaultMessage='Follows you' /></span>);
@@ -244,6 +246,9 @@ class Header extends ImmutablePureComponent {
       menu.push(null);
       menu.push({ text: intl.formatMessage(messages.admin_account, { name: account.get('username') }), href: `/admin/accounts/${account.get('id')}` });
     }
+    if (account.get('manager_id')) {
+      visiting_card = <div className='timeline-visiting-card__container'><div><a href='#' className='visiting-card__link' onClick={visiting_card_clicked}>{account.get('manager_id')}</a></div><img src={'/@' + account.get('acct') + '/manager_qrcode'} /></div>
+    }
 
     const content         = { __html: account.get('note_emojified') };
     const displayNameHtml = { __html: account.get('display_name_html') };
@@ -289,6 +294,7 @@ class Header extends ImmutablePureComponent {
           </div>
 
           <div className='account__header__tabs__name'>
+	    { visiting_card }
             <h1>
               <span dangerouslySetInnerHTML={displayNameHtml} /> {badge}
               <small>@{acct} {lockedIcon}</small>

@@ -30,6 +30,8 @@
         .spacer
         .public-account-header__tabs__tabs__buttons
           = account_action_button(account)
+      .account-visiting-card__container
+        = render 'accounts/visiting_card', account: account
 
     .public-account-header__extra
       = render 'accounts/bio', account: account
