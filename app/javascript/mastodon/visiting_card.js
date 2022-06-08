@@ -1,5 +1,5 @@
 export const visiting_card_clicked = e => {
-	navigator.clipboard.writeText(element.innerText).then(() => {
+	navigator.clipboard.writeText(e.currentTarget.innerText).then(() => {
 		console.log("A visiting card id has been copied to clipboard.");
 	}, () => {
 		console.warning("Failed to copy a visiting card id.");
