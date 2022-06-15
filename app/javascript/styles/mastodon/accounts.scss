@@ -375,16 +375,15 @@
 }
 
 .account-visiting-card__container {
-  float: right;
   position: relative;
-  top: -200px;
-  right: 10px;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.8);
+  margin-color: none;
+  width: fit-content;
 }
 
 .timeline-visiting-card__container {
   float: right;
   position: relative;
   right: 10px;
-  background-color: rgba(255,255,255);
+  background-color: rgba(255,255,255,0.8);
 }

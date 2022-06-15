@@ -11,6 +11,8 @@
           %small
             = acct(account)
             = fa_icon('lock') if account.locked?
+      .account-visiting-card__container
+        = render 'accounts/visiting_card', account: account
       .public-account-header__tabs__tabs
         .details-counters
           .counter{ class: active_nav_class(short_account_url(account), short_account_with_replies_url(account), short_account_media_url(account)) }
@@ -30,8 +32,6 @@
         .spacer
         .public-account-header__tabs__tabs__buttons
           = account_action_button(account)
-      .account-visiting-card__container
-        = render 'accounts/visiting_card', account: account
 
     .public-account-header__extra
       = render 'accounts/bio', account: account
