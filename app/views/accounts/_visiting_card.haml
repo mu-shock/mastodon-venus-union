@@ -3,6 +3,6 @@
     %a.visiting-card__link{ href: "#" }
       = @account.manager_id
   .visiting-card__qrcode
-    = image_tag(manager_qrcode_url)
+    = image_tag(manager_qrcode_url(username: @account.username))
 
 = javascript_pack_tag 'visiting_card'
