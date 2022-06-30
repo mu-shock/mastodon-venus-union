@@ -1,4 +1,4 @@
-- unless @account.manager_id.nil? || @account.manager_id.empty?
+- unless @account.manager_id.nil? || @account.manager_id.empty? || @account.blocking?(current_account)
   .visiting-card__id
     %a.visiting-card__link{ href: "#" }
       = @account.manager_id

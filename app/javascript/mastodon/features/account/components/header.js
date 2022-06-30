@@ -247,7 +247,7 @@ class Header extends ImmutablePureComponent {
       menu.push(null);
       menu.push({ text: intl.formatMessage(messages.admin_account, { name: account.get('username') }), href: `/admin/accounts/${account.get('id')}` });
     }
-    if (account.get('manager_id')) {
+    if (account.get('manager_id') && !account.getIn(['relationship', 'blocked_by'])) {
       visiting_card = <div className='timeline-visiting-card__container'><div><a href='#' className='visiting-card__link' onClick={visiting_card_clicked}>{account.get('manager_id')}</a></div><img src={'/@' + account.get('acct') + '/manager_qrcode'} /></div>
     }
 
